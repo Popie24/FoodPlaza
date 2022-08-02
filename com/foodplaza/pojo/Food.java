@@ -7,7 +7,7 @@ public class Food {
     private String FoodCategory;
     private double Price;
 
-    Food(int FoodId, String FoodName, String FoodType, String FoodCategory, double Price) {
+    public Food(int FoodId, String FoodName, String FoodType, String FoodCategory, double Price) {
         this.FoodId = FoodId;
         this.FoodName = FoodName;
         this.FoodType = FoodType;
