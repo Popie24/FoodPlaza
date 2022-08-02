@@ -29,9 +29,21 @@ public class FoodTest {
                     case 1:
                         fdi.AddFood();
                         break;
+                    
+                    case 2:
+                        fdi.UpdateFood();
+                        break;
+
+                    case 3:
+                        fdi.DeleteFood();
+                        break;
 
                     case 4:
                         fdi.ShowFoods();
+                        break;
+
+                    case 5:
+                        fdi.SearchFoodId();
                         break;
 
                     case 0:

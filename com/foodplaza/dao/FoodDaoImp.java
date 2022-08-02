@@ -55,6 +55,7 @@ public class FoodDaoImp implements FoodDao {
         System.out.println("Enter Food Id to Update: ");
         int id = sc.nextInt();
         It = list.iterator();
+        boolean b = false;
         while (It.hasNext()) {
             Food f = It.next();
             if (f != null && f.getFoodId() == id) {
@@ -65,24 +66,71 @@ public class FoodDaoImp implements FoodDao {
                 FoodType = br.readLine();
                 f.setFoodType(FoodType);
                 System.out.println("Enter Food Category To Update: ");
+                FoodCategory = br.readLine();
                 f.setFoodCategory(FoodCategory);
                 System.out.println("Enter Food Price To Update: ");
+                Price = sc.nextDouble();
                 f.setPrice(Price);
                 System.out.println("Food Updated Successfully.......... :)");
+                System.out.println(f);
+                b = false;
+            }else{
+                b = true;
             }
+        }
+
+        if(b){
+            System.out.println("XXXXXXXXXX------ Id Does Not Exit -----XXXXXXXXX");
+            UpdateFood();
         }
         
     }
 
     @Override
     public void DeleteFood() {
-        
+        System.out.println("Enter Existing Id To delete the Food Item: ");
+        int id = sc.nextInt();
+        It = list.iterator();
+        boolean b = false;
+        while (It.hasNext()) {
+            Food f = It.next();
+            if(f != null && f.getFoodId() == id){
+                It.remove();
+                System.out.println("Food Deleted Successfully....... :(");
+                b = false;
+            }else{
+                b = true;
+            }
+        }
+
+        if(b){
+            System.out.println("Details Not Found.");
+            DeleteFood();
+        }
         
     }
 
     @Override
     public void SearchFoodId() {
-        // TODO Auto-generated method stub
+        It = list.iterator();
+        System.out.println("Enter Id to Search Food: ");
+        int id = sc.nextInt();
+        boolean b = false;
+        while (It.hasNext()) {
+            Food f = It.next();
+            if(f != null && f.getFoodId() == id){
+                System.out.println("Here is Your Food..........");
+                System.out.println(f);
+                b=false;
+            }else{
+                b =true;
+            }
+        }
+
+        if(b){
+            System.out.println("Details Not Found ");
+            SearchFoodId();
+        }
         
     }
 
