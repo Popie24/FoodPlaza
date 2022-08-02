@@ -42,13 +42,35 @@ public class FoodDaoImp implements FoodDao {
 
     @Override
     public void ShowFoods() {
-        // TODO Auto-generated method stub
+        System.out.println("________________ ** All Records ** _________________");
+        It = list.iterator();
+        while (It.hasNext()) {
+            System.out.println(It.next());
+        }
         
     }
 
     @Override
-    public void UpdateFood() {
-        // TODO Auto-generated method stub
+    public void UpdateFood() throws IOException {
+        System.out.println("Enter Food Id to Update: ");
+        int id = sc.nextInt();
+        It = list.iterator();
+        while (It.hasNext()) {
+            Food f = It.next();
+            if (f != null && f.getFoodId() == id) {
+                System.out.println("Enter Food Name To Update: ");
+                FoodName = br.readLine();
+                f.setFoodName(FoodName);
+                System.out.println("Enter Food Type To Update: ");
+                FoodType = br.readLine();
+                f.setFoodType(FoodType);
+                System.out.println("Enter Food Category To Update: ");
+                f.setFoodCategory(FoodCategory);
+                System.out.println("Enter Food Price To Update: ");
+                f.setPrice(Price);
+                System.out.println("Food Updated Successfully.......... :)");
+            }
+        }
         
     }
 
