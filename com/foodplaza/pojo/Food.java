@@ -1,3 +1,5 @@
+package foodplaza.pojo;
+
 public class Food {
     private int FoodId;
     private String FoodName;
@@ -58,4 +60,5 @@ public class Food {
     public void setPrice(double price) {
         this.Price = price;
     }
+    // Basic Class.
 }

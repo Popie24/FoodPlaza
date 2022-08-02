@@ -1,4 +1,6 @@
-public abstract interface FoodDao {
+package foodplaza.dao;
+
+public interface FoodDao {
     abstract void AddFood();
     abstract void ShowFoods();
     abstract void UpdateFood();
